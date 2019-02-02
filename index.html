@@ -1,13 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>First graph</title>
+<style>
+        body {
+          margin: 0;
+          background: #000;
+          color: #fff;
+          font-family: 'Calibri', cursive;
+          line-height: 1.8;
+          display: flex;
+          align-items: center;
+          position: absolute;
+          top: 0; left: 0; right: 0; bottom: 0;
+        }
+        .wrapper {
+          text-align: center;
+          margin:  auto;
+        }
+        .title {
+          font-size: 40px;
+          margin-bottom: 50px;
+          letter-spacing: 12px;
+        }
+        #graph {
+          min-height: 350px;
+          margin: 10px auto 40px;
+        }
+        .left {
+          float: left;
+        }
+        .right {
+          float: right;
+        }
+        .explanation {
+          margin: 40px auto;
+          font-size: 12px;
+          text-align: left;
+          max-width: 550px;
+        }
+      </style>
 </head>
 <body>
-
-<h1>Test</h1>
-<p id="demo">This is a paragraph.</p>
-<button type="button" onclick="document.getElementById('demo').innerHTML = 
-'Paragraph changed with JavaScript!'">Click Me!</button>
+    <div class="wrapper">
+      <div class="title">BREAKOUT</div>
+      <div id="graph"></div>
+      <div class="explanation">
+        My first viz goes here.
+      </div>
+    </div>
+<!here goes the script>
 </body>
 </html>
