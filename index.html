@@ -52,8 +52,8 @@
         My first viz goes here.
       </div>
     </div>
-    <script type="module">
-      import {Inspector, Runtime} from "https://unpkg.com/@observablehq/notebook-runtime@1.0.1?module";
+    <!-- <script type="module">
+      import { Inspector, Runtime } from "https://unpkg.com/@observablehq/notebook-runtime@1.0.1?module";
       import notebook from "https://api.observablehq.com/d/f15b140a13795b74.js";
       //import notebook from "./RadialBar.js";
       const renders = {
@@ -67,6 +67,20 @@
           return true;
         }
       });
+    </script> -->
+    <script type="module">
+      // Load the Observable runtime and inspector.
+      import {Runtime, Inspector} from "https://unpkg.com/@observablehq/notebook-runtime?module";
+    
+      // Your notebook, compiled as an ES module.
+      import notebook from "https://api.observablehq.com/d/f15b140a13795b74.js";
+    
+      // Or, your notebook, downloaded locally.
+      import notebook from "./my-neat-notebook.js";
+    
+      // Load the notebook, observing its cells with a default Inspector
+      // that simply renders the value of each cell into the provided DOM node.
+      Runtime.load(notebook, Inspector.into(document.body));
     </script>
   </body>
 </html>
