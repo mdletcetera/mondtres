@@ -170,3 +170,5 @@ const notebook = {
 };
 
 export default notebook;
+import {Runtime, Inspector} from "https://unpkg.com/@observablehq/notebook-runtime?module";
+    
