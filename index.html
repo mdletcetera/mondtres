@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>First graph</title>
-<style>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>First graph</title>
+    <style>
         body {
           margin: 0;
           background: #000;
@@ -41,9 +41,10 @@
           text-align: center;
           max-width: 550px;
         }
-      </style>
-</head>
-<body>
+    
+    </style>
+  </head>
+  <body>
     <div class="wrapper">
       <div class="title">MY FIRST D3 VIZ</div>
       <div id="graph"></div>
@@ -51,6 +52,21 @@
         My first viz goes here.
       </div>
     </div>
-<!--here goes the script-->
-</body>
+    <script type="module">
+      import {Inspector, Runtime} from "https://unpkg.com/@observablehq/notebook-runtime@1.0.1?module";
+      import notebook from "https://api.observablehq.com/d/f15b140a13795b74.js";
+      //<!---import notebook from "./RadialBar.js";--->
+      const renders = {
+        "viewof c": "#graph"
+      };
+      Runtime.load(notebook, (variable) => {
+        const selector = renders[variable.name];
+        if (selector) {
+          return new Inspector(document.querySelector(selector));
+        } else {
+          return true;
+        }
+      });
+    </script>
+  </body>
 </html>
